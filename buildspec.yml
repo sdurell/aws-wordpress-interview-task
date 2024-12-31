@@ -16,13 +16,13 @@ phases:
   build:
     commands:
       - echo "Zipping the WordPress application"
-      - zip -r wordpress-app.zip . -x "*.git*"  # Exclude unnecessary files
+      - zip -r wordpress.zip . -x "*.git*"  # Exclude unnecessary files
   post_build:
     commands:
       - echo "Copying artifacts to the output directory"
       - mkdir -p artifacts
-      - mv wordpress-app.zip artifacts/
+      - mv wordpress.zip artifacts/
 
 artifacts:
   files:
-    - artifacts/wordpress-app.zip
+    - artifacts/wordpress.zip

@@ -1,5 +1,15 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /var/www/html
+  - source: /artifacts/wordpress.zip
+    destination: /tmp/wordpress.zip
+
+hooks:
+  BeforeInstall:
+    - location: scripts/cleanup.sh
+      timeout: 180
+      runas: root
+  AfterInstall:
+    - location: scripts/deploy.sh
+      timeout: 180
+      runas: root
