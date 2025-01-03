@@ -6,8 +6,7 @@ phases:
       php: latest  # Adjust based on your WordPress/PHP version compatibility
     commands:
       - echo "Installing dependencies"
-      - cat /etc/os-release
-      - yum install -y zip unzip
+      - apt-get install -y zip unzip
   pre_build:
     commands:
       - echo "Running pre-build tasks"
