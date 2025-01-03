@@ -5,8 +5,8 @@ phases:
     runtime-versions:
       php: latest  # Adjust based on your WordPress/PHP version compatibility
     commands:
-      - phpenv versions
       - echo "Installing dependencies"
+      - cat /etc/os-release
       - yum install -y zip unzip
   pre_build:
     commands:
