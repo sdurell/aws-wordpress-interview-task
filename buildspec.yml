@@ -3,8 +3,9 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      php: 8.1  # Adjust based on your WordPress/PHP version compatibility
+      php: latest  # Adjust based on your WordPress/PHP version compatibility
     commands:
+      - phpenv versions
       - echo "Installing dependencies"
       - yum install -y zip unzip
   pre_build:
