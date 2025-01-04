@@ -8,7 +8,7 @@ VERSION_FILE="$WP_INSTALL_DIR/wp-includes/version.php"
 
 # Find current version
 if [ -f "$VERSION_FILE" ]; then
-    CURRENT_VERSION=$(grep "\$wp_version" "$VERSION_FILE" | awk -F "'" '{print $2}')
+    CURRENT_VERSION=$(grep "\$wp_version" "$VERSION_FILE" | awk -F "'" '{print $2}' | xargs)
     echo "Current Wordpress Version: $CURRENT_VERSION"
 else
     echo "version.php not found at $VERSION_FILE"
@@ -17,9 +17,6 @@ fi
 
 # Find latest version of wordpress
 LATEST_VERSION=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | jq -r '.offers[0].current')
-
-echo "CURRENT_VERSION='$CURRENT_VERSION'"
-echo "LATEST_VERSION='$LATEST_VERSION'"
 
 if [ "$CURRENT_VERSION" != "$LATEST_VERSION" ]; then
     echo "Updating Wordpress from $CURRENT_VERSION to $LATEST_VERSION"
