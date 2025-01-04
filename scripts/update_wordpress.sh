@@ -18,6 +18,9 @@ fi
 # Find latest version of wordpress
 LATEST_VERSION=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | jq -r '.offers[0].current')
 
+echo "CURRENT_VERSION='$CURRENT_VERSION'"
+echo "LATEST_VERSION='$LATEST_VERSION'"
+
 if [ "$CURRENT_VERSION" != "$LATEST_VERSION" ]; then
     echo "Updating Wordpress from $CURRENT_VERSION to $LATEST_VERSION"
 
