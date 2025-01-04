@@ -3,7 +3,7 @@
 # Path to wordpress install
 WP_INSTALL_DIR="/var/www/html/wordpress"
 
-# Path to version.php file
+# Path to "version.php" file
 VERSION_FILE="$WP_INSTALL_DIR/wp-includes/version.php"
 
 # Find current version
