@@ -8,7 +8,7 @@ VERSION_FILE="$WP_INSTALL_DIR/wp-includes/version.php"
 
 # Find current version
 if [ -f "$VERSION_FILE" ]; then
-    CURRENT_VERSION=$(grep -oP "\$wp_version\s*=\s*'\K[^']+" "$VERSION_FILE")
+    CURRENT_VERSION=$(grep "\$wp_version" "$VERSION_FILE" | awk -F "'" '{print $2}')
     echo "Current Wordpress Version: $CURRENT_VERSION"
 else
     echo "version.php not found at $VERSION_FILE"
