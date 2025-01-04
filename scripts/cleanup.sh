@@ -1,4 +1,3 @@
 #!/bin/bash
 echo "Cleaning up old Wordpress files"
-cd /var/www/html/wordpress
-find . -type f ! -name 'wp-config.php' ! -name 'wp-content/uploads' -exec rm -f {} \;
+find "/var/www/html/wordpress/wp-content" -mindepth 1 ! -name "uploads" -exec rm -rf {} \;
