@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /artifacts/wordpress.zip
-    destination: /var/tmp/wordpress.zip
+    destination: /tmp/
 
 hooks:
   BeforeInstall:
