@@ -6,6 +6,9 @@ files:
 
 hooks:
   BeforeInstall:
+    - location: scripts/update_wordpress.sh
+      timeout: 180
+      runas: root
     - location: scripts/cleanup.sh
       timeout: 180
       runas: root
